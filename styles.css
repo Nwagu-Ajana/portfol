@@ -1,22 +1,27 @@
-/* ===== GLOBAL RESET ===== */
+/* ===== RESET ===== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
-  font-family: "Inter", Arial, sans-serif;
+  font-family: "Inter", "Segoe UI", sans-serif;
+  background: #0d1117;
+  color: #c9d1d9;
   line-height: 1.7;
-  color: #242424;
-  background: #f8f9fc;
 }
 
-/* ===== CONTAINERS ===== */
+a {
+  color: #58a6ff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ===== CONTAINER ===== */
 .container {
   width: 90%;
   max-width: 1100px;
@@ -25,122 +30,143 @@ body {
 
 /* ===== HEADER ===== */
 .site-header {
-  background: white;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  background: #161b22;
+  padding: 18px 0;
   position: sticky;
   top: 0;
-  z-index: 50;
+  z-index: 100;
+  border-bottom: 1px solid #30363d;
 }
 
 .site-header .container {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: 18px 0;
+  align-items: center;
 }
 
 .logo {
-  font-size: 1.6rem;
+  color: #fff;
+  font-size: 1.5rem;
   font-weight: 700;
-  color: #1a1a1a;
 }
 
-/* ===== NAVIGATION ===== */
 .nav a {
-  margin-left: 22px;
-  text-decoration: none;
-  font-weight: 500;
-  color: #444;
+  margin-left: 20px;
+  font-size: 1rem;
+  color: #c9d1d9;
   transition: 0.3s;
 }
 
-.nav a:hover {
-  color: #0066ff;
+.nav a:hover,
+.nav a.active {
+  color: #58a6ff;
 }
 
-/* ===== HERO SECTION ===== */
+/* ===== HERO ===== */
 .hero {
-  padding: 80px 0;
-  background: linear-gradient(135deg, #e8f0ff, #ffffff);
+  padding: 100px 0;
+  background: #0d1117;
 }
 
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 40px;
-  align-items: center;
-}
-
-.hero h2 {
-  font-size: 2.2rem;
+.hero h1 {
+  font-size: 2.8rem;
   margin-bottom: 15px;
-  color: #0f2a59;
 }
 
-.tagline {
-  font-size: 1.1rem;
-  margin-bottom: 15px;
-  color: #444;
-}
-
-.contact-line {
-  margin-bottom: 20px;
+.hero p {
+  max-width: 600px;
+  color: #8b949e;
+  margin-bottom: 25px;
 }
 
 .btn {
   display: inline-block;
-  padding: 10px 18px;
-  background: #0f62fe;
+  padding: 12px 20px;
+  background: #238636;
   color: white;
-  text-decoration: none;
   border-radius: 6px;
   font-weight: 600;
   transition: 0.3s;
 }
 
 .btn:hover {
-  background: #0046c0;
+  background: #2ea043;
 }
 
-.btn.outline {
+.btn.secondary {
   background: transparent;
-  border: 2px solid #0f62fe;
-  color: #0f62fe;
+  border: 2px solid #58a6ff;
+  color: #58a6ff;
 }
 
-.btn.outline:hover {
-  background: #0f62fe;
-  color: white;
+.btn.secondary:hover {
+  background: #58a6ff;
+  color: #0d1117;
 }
 
-/* ===== SUMMARY CARD ===== */
-.summary-card {
-  background: white;
+/* ===== SECTIONS ===== */
+.section {
+  padding: 70px 0;
+}
+
+.section h2 {
+  color: #fff;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+/* ===== CARDS ===== */
+.card {
+  background: #161b22;
   padding: 25px;
-  border-radius: 12
-
-
-
-/* Fade-in base */
-.section, .job, .summary-card {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.8s ease;
+  border-radius: 10px;
+  border: 1px solid #30363d;
+  margin-bottom: 20px;
+  transition: 0.3s;
 }
 
-/* When visible */
-.show {
+.card:hover {
+  transform: translateY(-4px);
+  border-color: #58a6ff;
+}
+
+/* ===== SKILLS GRID ===== */
+.skill-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.skill-grid div {
+  padding: 18px;
+  background: #21262d;
+  border-radius: 8px;
+  text-align: center;
+  border: 1px solid #30363d;
+  transition: 0.3s;
+}
+
+.skill-grid div:hover {
+  border-color: #58a6ff;
+}
+
+/* ===== FOOTER ===== */
+.site-footer {
+  text-align: center;
+  padding: 20px;
+  background: #161b22;
+  border-top: 1px solid #30363d;
+  color: #8b949e;
+}
+
+/* ===== ANIMATIONS ===== */
+.fade {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: 0.8s ease;
+}
+
+.fade.show {
   opacity: 1;
   transform: translateY(0);
-}
-
-/* Header scroll effect */
-.site-header.scrolled {
-  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
-}
-
-/* Active nav link */
-.nav a.active {
-  color: #0f62fe;
-  font-weight: 700;
 }
